@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+    dynamic_type_librarii:
+        container_name: dynamic_type_librarii
+        build:
+            dockerfile: ./deploy/Dockerfile
+            context: ../
+        logging:
+            driver: "json-file"
+        ports:
+            - "127.0.0.1:21001:1337"
+    dynamic_type_librarii-build:
+        container_name: dynamic_type_librarii-build
+        build:
+            dockerfile: ./deploy/Dockerfile-build
+            context: ../
+        logging:
+            driver: "json-file"
+        volumes:
+            - build:/home/dynamic_type_librarii/build
+volumes:
+    build:
+        name: dynamic_type_librarii-build
+        driver: local
+        driver_opts:
+            type: none
+            device: ../dist
+            o: bind

@@ -1,0 +1,4 @@
+/* GNU ld script
+*/
+OUTPUT_FORMAT(elf64-x86-64)
+GROUP ( /home/novafacing/hub/glibc/build/lib/libm.so.6  AS_NEEDED ( /home/novafacing/hub/glibc/build/lib/libmvec_nonshared.a /home/novafacing/hub/glibc/build/lib/libmvec.so.1 ) )

@@ -1,0 +1,1 @@
+this is challenge is a play on words of a type, ts is the extension for typescript files and of a video container called video transport stream, that are common on dvds. the .ts file is a video that contains 5 slides each slide containing a portion of the ofuscated js code that outputs the flag. someone must OCR the file and run the resulting code

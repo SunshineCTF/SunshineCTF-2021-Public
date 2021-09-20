@@ -1,0 +1,11 @@
+TARGET := chompfeed
+
+BITS := 64
+ASLR := 1
+DEP := 1
+RELRO := 1
+CANARY := 1
+STRIP := 1
+#DEBUG := 1
+
+PUBLISH_BUILD := $(TARGET)
