@@ -1,0 +1,12 @@
+name: sun21-emoji-browser
+
+services:
+  chal:
+    build: ./src
+    restart: unless-stopped
+    mem_limit: 512m
+    # Web challenge served via nginx on emoji-browser.ctf.hackucf.org
+    ports:
+      - "127.0.0.1:21301:8000"
+    cpus: 1.0
+    pids_limit: 512

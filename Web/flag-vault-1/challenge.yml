@@ -1,0 +1,21 @@
+version: "0.1"
+name: Flag Vault 1
+author: Helithumper
+category: Web
+description: |-
+  # Flag Vault 1
+
+  I know my stuff. I'll show you my vault even, but have fun trying to get into it.o
+attribution: Written by Helithumper for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 175
+connection_info: https://flag-vault-1.ctf.hackucf.org
+flags:
+  - "sun{4r3N7-Y0U-614D-Y0Ur3-N07_7H3-P0P3}"
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

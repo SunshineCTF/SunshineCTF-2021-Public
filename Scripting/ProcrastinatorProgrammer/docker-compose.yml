@@ -1,39 +1,67 @@
-version: "3.3"
+name: sun21-procrastinatorprogrammer
+
+# Three raw-TCP scripting challenges (socat + python eval sandboxes). Each part
+# tells the player where the next part lives. For the archive they are reached
+# as `nc ctf.hackucf.org <port>`:
+#   part 1 -> 21201   part 2 -> 21202   part 3 -> 21203
+# The autosolver (profile "solver") verifies all three via the internal compose
+# network; it is not started by a normal `up`.
+
 services:
   challenge-1:
     build: ./challenge-part-1
+    container_name: sun21-procrastinatorprogrammer-1
+    restart: unless-stopped
     ports:
-      - "${CHALLENGE_1_PORT}:65000/tcp"
-    environment: 
-      CHALLENGE_2_PORT: ${CHALLENGE_2_PORT}
-      CHALLENGE_2_DOMAIN: ${CHALLENGE_2_DOMAIN}
+      - "21201:65000/tcp"
+    environment:
+      CHALLENGE_2_PORT: "21202"
+      CHALLENGE_2_DOMAIN: ctf.hackucf.org
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 512
+
   challenge-2:
     build: ./challenge-part-2
+    container_name: sun21-procrastinatorprogrammer-2
+    restart: unless-stopped
     ports:
-      - "${CHALLENGE_2_PORT}:65001/tcp"
-    environment: 
-      CHALLENGE_1_PORT: ${CHALLENGE_1_PORT}
-      CHALLENGE_1_DOMAIN: ${CHALLENGE_1_DOMAIN}
-      CHALLENGE_3_PORT: ${CHALLENGE_3_PORT}
-      CHALLENGE_3_DOMAIN: ${CHALLENGE_3_DOMAIN}
+      - "21202:65001/tcp"
+    environment:
+      CHALLENGE_1_PORT: "21201"
+      CHALLENGE_1_DOMAIN: ctf.hackucf.org
+      CHALLENGE_3_PORT: "21203"
+      CHALLENGE_3_DOMAIN: ctf.hackucf.org
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 512
+
   challenge-3:
     build: ./challenge-part-3
+    container_name: sun21-procrastinatorprogrammer-3
+    restart: unless-stopped
     ports:
-      - "${CHALLENGE_3_PORT}:65002/tcp"
-    environment: 
-      CHALLENGE_2_PORT: ${CHALLENGE_2_PORT}
-      CHALLENGE_2_DOMAIN: ${CHALLENGE_2_DOMAIN}
+      - "21203:65002/tcp"
+    environment:
+      CHALLENGE_2_PORT: "21202"
+      CHALLENGE_2_DOMAIN: ctf.hackucf.org
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 512
+
   autosolver:
     build: ./autosolver
+    container_name: sun21-procrastinatorprogrammer-solver
+    profiles: ["solver"]
+    # Internal ports for connecting over the compose network to the services.
     environment:
-      CHALLENGE_1_PORT: ${CHALLENGE_1_PORT}
-      CHALLENGE_2_PORT: ${CHALLENGE_2_PORT}
-      CHALLENGE_3_PORT: ${CHALLENGE_3_PORT}
-      CHALLENGE_1_DOMAIN: challenge-1 
-      CHALLENGE_2_DOMAIN: challenge-2 
-      CHALLENGE_3_DOMAIN: challenge-3 
-        #network_mode: "host"
+      CHALLENGE_1_PORT: "65000"
+      CHALLENGE_2_PORT: "65001"
+      CHALLENGE_3_PORT: "65002"
     depends_on:
       - challenge-1
       - challenge-2
       - challenge-3
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 512

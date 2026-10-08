@@ -1,0 +1,22 @@
+version: "0.1"
+name: MrRobot
+author: BLuəf0x
+category: Crypto
+description: |-
+  What I'm about to tell you c3Vue2 is top secret. A conspiracy hlbG bigger than all of us.
+  There's a powerful group of people out there that are secretly running the world.
+  I'm talking about the xvX3dv guys no one knows about, the ones that are invisible.
+  The top 1% of the top 1%, the cmxk guys that play God without permission.
+  And now I think they're fQ== following me.
+attribution: Written by BLuəf0x for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 25
+flags:
+  - sun{hello_world}
+tags:
+  - "sunshinectf-2021"
+  - "beginner"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

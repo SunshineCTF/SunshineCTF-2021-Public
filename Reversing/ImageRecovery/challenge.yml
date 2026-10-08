@@ -1,0 +1,27 @@
+version: "0.1"
+name: ImageRecovery
+author: kcolley
+category: Reversing
+description: |-
+  I found my old digital camera with important photos on it, but it won't turn on
+  any more. I managed to recover some of the image files from its internal flash
+  memory, but they seem to be all garbled up and unable to be opened on my
+  computer. I've also found this program from the camera's CD-ROM that has
+  something to do with converting images, so maybe that will be helpful? Please
+  help me recover these important images!
+
+  * [recovered.tar.gz](/files/sun/21/Reversing/ImageRecovery/recovered.tar.gz)
+attribution: Written by kcolley for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 200
+flags:
+  - type: regex
+    content: 'sun{[1i]m[a4]g[e3][_ ]f[o0]rm[a4]t[s5][_ ][a4]r[e3][_ ]c[o0][o0]l}'
+    data: case_sensitive
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

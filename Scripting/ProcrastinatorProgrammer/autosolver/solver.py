@@ -144,7 +144,7 @@ while True:
                 domain_and_port_prompt += result
                 result = client.recv(80000).decode('utf-8')
             
-            if not 'challenge-' in domain_and_port_prompt and not 'sunshinectf.org' in domain_and_port_prompt:
+            if not 'challenge-' in domain_and_port_prompt and not 'sunshinectf.org' in domain_and_port_prompt and not 'ctf.hackucf.org' in domain_and_port_prompt:
                 print("Challenge did not print out either challenge- or a domain containing sunshinectf.org")
                 print(f"Instead printed '{domain_and_port_prompt}'")
                 exit(1)

@@ -1,0 +1,12 @@
+name: sun21-typing
+
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    mem_limit: 128m
+    # Static web challenge served via nginx on typing.ctf.hackucf.org
+    ports:
+      - "127.0.0.1:21501:80"
+    cpus: 0.5
+    pids_limit: 512

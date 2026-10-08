@@ -1,0 +1,20 @@
+version: "0.1"
+name: framed
+author: "aleccoder"
+category: Misc
+description: |-
+  You know just beacuse time goes on and things become popular it doesnt mean the classics aren't still good.
+
+  * [framed.mkv](/files/sun/21/Misc/framed/framed.mkv)
+attribution: Written by aleccoder for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 150
+flags:
+  - SUN{Yes_I_know_its_a_mess_but_hey_it_works_so_you_have_no_right_to_judge_it_has_10gbe_you_know_ibet_you_dont}
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

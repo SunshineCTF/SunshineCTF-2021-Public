@@ -2,7 +2,7 @@ TARGET := chompfeed
 
 BITS := 64
 ASLR := 1
-DEP := 1
+NX := 1
 RELRO := 1
 CANARY := 1
 STRIP := 1

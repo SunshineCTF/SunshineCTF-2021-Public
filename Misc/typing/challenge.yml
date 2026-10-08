@@ -1,0 +1,19 @@
+version: "0.1"
+name: typing
+author: "aleccoder"
+category: Misc
+description: |-
+  my boss is really mean i am trying my best to make the site he wants but he is really demanding, do you want to see it?
+attribution: Written by aleccoder for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 125
+connection_info: https://typing.ctf.hackucf.org
+flags:
+  - SUN{IDONT_UNDERSTAND_JS_0R_TS}
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

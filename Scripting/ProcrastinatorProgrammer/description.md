@@ -5,7 +5,7 @@ This may be a mistake.
 
 Or mistakes were made.
 
-I may have procrastinated security for `procrastinate.2021.sunshinectf.org 65000`. I may have been watching too many Tom Cruise movies instead of releasing this... uh... last year.
+I may have procrastinated security for `ctf.hackucf.org 21201`. I may have been watching too many Tom Cruise movies instead of releasing this... uh... last year.
 
 But don't worry! The keys to the kingdom are split into three parts... you'll never find them all!
 

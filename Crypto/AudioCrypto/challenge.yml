@@ -1,0 +1,26 @@
+version: "0.1"
+name: AudioCrypto
+author: "ratman"
+category: Crypto
+description: |-
+  My text files keep getting decrypted. This time I stored my flag in an audio file to make it so cryptanalysis won't work any more.
+
+  P.S. Turn down your headphones. A lot.
+
+  P.P.S. Flag is all lowercase.
+
+  Download the encrypted audio file (flag_encrypted.wav) here: https://drive.google.com/file/d/1nR9y4ST1LSZTa-r9cOGiYo58pB9CB2-E/view
+
+  * [encrypt_wav.py](/files/sun/21/Crypto/AudioCrypto/encrypt_wav.py)
+attribution: Written by ratman for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 200
+flags:
+  - sun{aud1o_crypt0_c4nt_r3p34t}
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

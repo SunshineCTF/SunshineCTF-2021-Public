@@ -1,9 +1,14 @@
-version: "3.8"
+name: sun21-flag-vault-1
+
 services:
   web:
     build: .
+    restart: unless-stopped
+    mem_limit: 512m
     environment:
-      - FLAG=flag
+      - FLAG=sun{4r3N7-Y0U-614D-Y0Ur3-N07_7H3-P0P3}
+    # Web challenge served via nginx on flag-vault-1.ctf.hackucf.org
     ports:
-      - "3000:3000"
-
+      - "127.0.0.1:21302:3000"
+    cpus: 1.0
+    pids_limit: 512

@@ -1,0 +1,22 @@
+version: "0.1"
+name: emoji-browser
+author: "shuga__"
+category: Web
+description: |-
+  So, when looking at the feedback for SunshineCTF 2020, I was shocked when I saw an overwhelming
+  positive response with the presence of emoji! So much so, that the organizers told me to theme a
+  front-end for some emoji browser challenge. I have no idea what this challenge does, but it seems to
+  render emoji and nothing else. Seems kind of redundant if that's true.
+attribution: Written by shuga__ for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 150
+connection_info: https://emoji-browser.ctf.hackucf.org
+flags:
+  - "sun{why_th3_h3cc_1s_th1s_a_c_str1ng}"
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

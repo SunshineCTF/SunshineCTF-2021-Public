@@ -1,0 +1,17 @@
+name: sun21-dynamictypelibrarii
+
+services:
+  dynamic_type_librarii:
+    container_name: sun21-dynamictypelibrarii
+    build:
+      dockerfile: ./deploy/Dockerfile
+      context: .
+    restart: unless-stopped
+    mem_limit: 512m
+    logging:
+      driver: "json-file"
+    # Challenge speaks raw TCP via xinetd on 1337; exposed on the archive port.
+    ports:
+      - "21001:1337"
+    cpus: 1.0
+    pids_limit: 512

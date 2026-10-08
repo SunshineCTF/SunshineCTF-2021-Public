@@ -1,0 +1,22 @@
+version: "0.1"
+name: DownUnder
+author: "shuga__"
+category: Misc
+description: |-
+  I mentioned to a friend of mine from Australia that I like the Game Boy Advance. Apparantly, they had a mysterious cartridge they found at a *Men At Work* concert, and they figured to send it me to figure out what's on it.
+
+  However, I have no clue why it keeps referencing a "flag." I ripped it already, but I can't figure out what it's about. Can you help me crack this code?
+
+  * [DownUnder.gba](/files/sun/21/Misc/DownUnder/DownUnder.gba)
+attribution: Written by shuga__ for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 75
+flags:
+  - sun{n1ce_str1ngs_c0mm4nd_but_ch3cc_th3_m@p}
+tags:
+  - "sunshinectf-2021"
+  - "beginner"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

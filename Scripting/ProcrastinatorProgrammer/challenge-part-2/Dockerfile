@@ -19,4 +19,4 @@ RUN chown root:root /app /app/key /app/server-challenge-2.py && \
 
 # listens on the following port.
 EXPOSE 65001/tcp
-CMD socat -T 31 TCP-LISTEN:65001,fork,reuseaddr EXEC:"/app/server-challenge-2.py",su=unprivileged,pty,ctty,echo=0,stderr
+CMD socat -T 31 TCP-LISTEN:65001,fork,reuseaddr EXEC:"/app/server-challenge-2.py",su=unprivileged,stderr

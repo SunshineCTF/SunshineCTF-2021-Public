@@ -1,0 +1,21 @@
+# ctfcli project config. Don't commit credentials here: set CTFCLI_URL and
+# CTFCLI_ACCESS_TOKEN in the environment instead (they override [config]).
+[config]
+url =
+access_token =
+
+[challenges]
+Crypto/AudioCrypto =
+Crypto/MrRobot =
+Crypto/MultipleExponents =
+Misc/DownUnder =
+Misc/framed =
+Misc/typing =
+Pwn/DynamicTypeLibraRII =
+Reversing/ChompFeed =
+Reversing/ImageRecovery =
+Reversing/UselessVM =
+Reversing/WebChallenge =
+Scripting/ProcrastinatorProgrammer =
+Web/emoji-browser =
+Web/flag-vault-1 =

@@ -1,7 +1,11 @@
 FROM python:3.9-slim-buster
 WORKDIR /opt/chal
 
-RUN apt-get update \
+# Debian buster is EOL; its packages now live on archive.debian.org.
+RUN sed -i -e 's|deb.debian.org/debian|archive.debian.org/debian|g' \
+        -e 's|security.debian.org/debian-security|archive.debian.org/debian-security|g' \
+        -e '/buster-updates/d' /etc/apt/sources.list \
+    && apt-get -o Acquire::Check-Valid-Until=false update \
     && apt-get install -y --no-install-recommends \
         build-essential \
         python3-dev \

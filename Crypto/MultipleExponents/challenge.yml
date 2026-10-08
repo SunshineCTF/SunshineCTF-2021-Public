@@ -1,0 +1,20 @@
+version: "0.1"
+name: MultipleExponents
+author: "ratman"
+category: Crypto
+description: |-
+  Both Alice and Bob share the same modulus, but with different exponents. If only there was some way I could recover this message that was sent to both of them.
+
+  * [source.py](/files/sun/21/Crypto/MultipleExponents/source.py)
+attribution: Written by ratman for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 125
+flags:
+  - sun{d0n7_d0_m0r3_th4n_0ne_3xp0n3nt}
+tags:
+  - "sunshinectf-2021"
+  - "intermediate"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

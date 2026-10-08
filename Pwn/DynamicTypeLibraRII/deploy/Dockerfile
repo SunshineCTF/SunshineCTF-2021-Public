@@ -4,14 +4,11 @@
 # FROM ubuntu:18.04
 FROM ubuntu:18.04
 
-# Install any software needed to
-# build the challenge
-
-RUN apt-get update
-RUN apt-get install -y xinetd
-RUN apt-get update
-RUN apt-get install -y build-essential
-RUN apt-get install -y gcc-multilib
+# Install any software needed to build the challenge.
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update \
+    && apt-get install -y xinetd build-essential gcc-multilib \
+    && rm -rf /var/lib/apt/lists/*
 
 # Change example to the name of your challenge.
 
@@ -41,7 +38,7 @@ COPY ./src/Makefile /home/$USER/Makefile
 COPY ./src/lib /home/$USER/lib/
 
 # We don't want to forget the flag!
-COPY ./solve/flag.txt /home/$USER/flag.txt
+COPY ./flag.txt /home/$USER/flag.txt
 
 # This runs make in the challenge dir
 RUN make -C /home/$USER/

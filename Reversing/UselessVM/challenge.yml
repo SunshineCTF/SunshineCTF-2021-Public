@@ -1,0 +1,31 @@
+version: "0.1"
+name: UselessVM
+author: crandyman
+category: Reversing
+description: |-
+  # Useless VM
+
+  I designed my own virtualized flag storage system a while back. Unfortunately, I
+  think it may have gotten a bit... rusty.
+
+  Challenge contributed by Research Innovations, Inc (RII). Say hi to crandyman if you get a chance!
+
+  Note: ARM and Intel binaries available for convenient dynamic analysis. The
+  hosted challenge is Intel, but the solution should be independent of
+  architecture.
+
+  * [rust_vm_intel](/files/sun/21/Reversing/UselessVM/rust_vm_intel)
+  * [rust_vm_m1](/files/sun/21/Reversing/UselessVM/rust_vm_m1)
+attribution: Written by crandyman for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 300
+connection_info: nc ctf.hackucf.org 21101
+flags:
+  - sun{We_hire_RIIverse_engineers}
+tags:
+  - "sunshinectf-2021"
+  - "expert"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible

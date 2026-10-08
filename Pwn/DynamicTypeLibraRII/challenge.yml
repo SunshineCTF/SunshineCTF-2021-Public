@@ -1,0 +1,25 @@
+version: "0.1"
+name: DynamicTypeLibraRII
+author: novafacing
+category: Pwn
+description: |-
+  Have you ever wanted to have dynamic types in C? Probably not, but I am giving them to you anyway!
+
+  Challenge contributed by Research Innovations, Inc (RII). Say hi to `crandyman#5861` if you get a chance!
+
+  * [dynamic_type_librarii](/files/sun/21/Pwn/DynamicTypeLibraRII/dynamic_type_librarii)
+  * [ld-linux-x86-64.so.2](/files/sun/21/Pwn/DynamicTypeLibraRII/ld-linux-x86-64.so.2)
+  * [libc.so.6](/files/sun/21/Pwn/DynamicTypeLibraRII/libc.so.6)
+attribution: Written by novafacing for [SunshineCTF 2021](https://ctftime.org/event/1441)
+type: standard
+value: 350
+connection_info: nc ctf.hackucf.org 21001
+flags:
+  - sun{no_fl0ats_just_binaRII}
+tags:
+  - "sunshinectf-2021"
+  - "expert"
+solution:
+  path: writeup.md
+  state: hidden
+state: visible
