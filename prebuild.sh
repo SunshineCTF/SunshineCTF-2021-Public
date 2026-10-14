@@ -1,9 +1,11 @@
 #!/bin/bash
 # Runs during pwnmake image initialization. Installs the python modules the
-# challenge solver scripts need so `pwnmake check` can run them in the container.
+# challenge solver scripts need so `pwnmake check` can run them in the container,
+# and xz-utils, which `pwnmake publish` uses to unpack Crypto/AudioCrypto's
+# handout (kept xz-compressed in git) for players.
 set -e
 apt-get update
-apt-get install -y --no-install-recommends python3-pwntools python3-requests
+apt-get install -y --no-install-recommends python3-pwntools python3-requests xz-utils
 
 # docker compose v2 plugin + a `docker-compose` shim, so `pwnmake` can bring the
 # docker-compose challenges up/down from inside the pwnmake container (used by the
